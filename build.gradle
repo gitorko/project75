@@ -1,12 +1,12 @@
 plugins {
-    id 'org.springframework.boot' version '2.3.2.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'org.springframework.boot' version '2.7.2'
+    id 'io.spring.dependency-management' version '1.0.12.RELEASE'
     id 'java'
 }
 
 group = 'com.demo'
 version = '1.0.0'
-sourceCompatibility = '11'
+sourceCompatibility = '17'
 
 configurations {
     compileOnly {
@@ -21,14 +21,13 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    compile 'com.querydsl:querydsl-apt:4.3.1'
-    compile 'com.querydsl:querydsl-core:4.3.1'
-    compile 'com.querydsl:querydsl-jpa:4.3.1'
-    compile 'org.postgresql:postgresql'
-    compile 'com.h2database:h2'
+    implementation 'com.querydsl:querydsl-apt:5.0.0'
+    implementation 'com.querydsl:querydsl-core:5.0.0'
+    implementation 'com.querydsl:querydsl-jpa:5.0.0'
     compileOnly 'org.projectlombok:lombok'
+    runtimeOnly 'com.h2database:h2'
     annotationProcessor 'org.projectlombok:lombok'
-    annotationProcessor 'com.querydsl:querydsl-apt:4.3.1:jpa'
+    annotationProcessor 'com.querydsl:querydsl-apt:5.0.0:jpa'
     annotationProcessor  group: 'javax.persistence'   , name: 'javax.persistence-api'
     annotationProcessor  group: 'javax.annotation'    , name: 'javax.annotation-api'
 }
